@@ -8,7 +8,7 @@ const Coctails = () => {
        const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '#cocktails',
-            start: 'top 30%',
+            start: 'top 60%',
             end: 'bottom 80%',
             scrub: true,
         }
