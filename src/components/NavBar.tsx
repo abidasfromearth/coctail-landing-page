@@ -3,35 +3,38 @@ import gsap from 'gsap';
 import { NAV_ITEMS } from '../../constants';
 
 const NavBar = () => {
+  useGSAP(() => {
+    const navTween = gsap.timeline({
+      scrollTrigger: {
+        trigger: 'nav',
+        start: 'bottom top',
+      },
+    });
 
-    useGSAP(() => {
-        const navTween = gsap.timeline({
-            scrollTrigger: {
-                trigger: 'nav',
-                start: 'bottom top'
-            }
-        });
-
-        navTween.fromTo('nav', { backgroundColor: 'transparent' }, { backgroundColor: '#00000050', backgroundFilter: 'blur(10px)', duration: 1, ease: 'power1.inOut' });
-    }, []);
-
-    return (
-        <nav>
-            <div>
-                <a href="#" className="flex items-center gap-2">
-                    <img src="/images/logo.png" alt="logo" />
-                    <p>Velvet Pour</p>
-                </a>
-                <ul className='flex-center gap-12'>
-                    {NAV_ITEMS.map((item) => (
-                        <li key={item.id}>
-                            <a href={`#${item.id}`}>{item.title}</a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </nav>
+    navTween.fromTo(
+      'nav',
+      { backgroundColor: 'transparent' },
+      { backgroundColor: '#00000050', backgroundFilter: 'blur(10px)', duration: 1, ease: 'power1.inOut' },
     );
+  }, []);
+
+  return (
+    <nav>
+      <div>
+        <a href="#" className="flex items-center gap-2">
+          <img src="/images/logo.png" alt="logo" />
+          <p>Velvet Pour</p>
+        </a>
+        <ul className="flex-center gap-12">
+          {NAV_ITEMS.map(item => (
+            <li key={item.id}>
+              <a href={`#${item.id}`}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default NavBar;

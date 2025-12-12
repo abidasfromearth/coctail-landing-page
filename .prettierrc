@@ -1,0 +1,25 @@
+{
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 140,
+    "tabWidth": 2,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "useTabs": false,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "overrides": [
+      {
+        "files": "*.{js,ts,tsx}",
+        "options": {
+          "semi": true,
+          "bracketSpacing": true,
+          "arrowParens": "avoid"
+        }
+      }
+    ]
+}
